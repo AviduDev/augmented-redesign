@@ -1,4 +1,4 @@
-# Astro Starter Kit: Minimal
+# Augmeted Arts Re-Design
 
 ```
 npm create astro@latest -- --template minimal
