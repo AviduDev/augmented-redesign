@@ -1,0 +1,20 @@
+---
+export interface Props {
+  buttonText: string;
+}
+const { buttonText } = Astro.props;
+---
+
+<a href="" class="secondaryButton">
+  {buttonText}
+</a>
+
+<style>
+  .secondaryButton {
+    padding: 0.5em;
+    margin: 0.5em;
+    color: var(--black);
+  }
+</style>
+
+<script></script>

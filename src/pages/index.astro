@@ -1,5 +1,13 @@
 ---
+// layouts
 import Layout from "../layouts/Layout.astro";
+// components
+import Hero from "../components/Hero.astro";
+import ServiceUi from "../components/ServiceUi.astro";
+import Quote from "../components/Quote.astro";
+import FeaturedIn from "../components/FeaturedIn.astro";
+import GoogleReviews from "../components/GoogleReviews.astro";
+import TestimonyUi from "../components/TestimonyUi.astro";
 ---
 
 <Layout
@@ -7,6 +15,34 @@ import Layout from "../layouts/Layout.astro";
   description="We are proffesionals in wedding photography and videography with over 7 years of experience."
 >
   <main>
-    <h1>hi</h1>
+    <!-- hero -->
+    <section class="heroSection">
+      <Hero />
+    </section>
+
+    <!-- services -->
+    <section class="servicesSection">
+      <ServiceUi />
+    </section>
+
+    <!-- weddings -->
+    <section class="quoteSection">
+      <Quote />
+    </section>
+
+    <!-- why us -->
+    <section class="featuredIn">
+      <FeaturedIn />
+    </section>
+
+    <!-- google reviews -->
+    <section class="googleSection">
+      <GoogleReviews />
+    </section>
+
+    <!-- testimony -->
+    <section class="testimonySection">
+      <TestimonyUi />
+    </section>
   </main>
 </Layout>
