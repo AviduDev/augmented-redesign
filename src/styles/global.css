@@ -13,6 +13,10 @@
 * {
   margin: 0;
 }
+::selection {
+  color: var(--white);
+  background: var(--black);
+}
 
 body {
   font-family: Arial;
@@ -22,6 +26,21 @@ body {
 :root {
   --black: #000;
   --white: #fff;
+
+  --p-s: 1rem;
+  --p-m: 1.2rem;
+  --p-l: 1.4rem;
+  --p-xl: 1.6rem;
+
+  --h-2xs: 1rem;
+  --h-xs: 1.5rem;
+  --h-s: 2rem;
+  --h-m: 2.5rem;
+  --h-l: 3rem;
+  --h-xl: 3.5rem;
+  --h-2xl: 4rem;
+  --h-3xl: 4.5rem;
+  --h-4xl: 5rem;
 }
 
 /* item specific */
@@ -35,10 +54,40 @@ button {
   border: none;
 }
 
+h1 {
+  font-size: var(--h-m);
+}
+
+h2 {
+  font-size: var(--h-s);
+}
+
+h3 {
+  font-size: var(--h-xs);
+}
+
+h4 {
+  font-size: var(--h-2xs);
+}
+
+h1,
+h3,
+h3,
+h4,
+a {
+  text-transform: uppercase;
+}
+
+p {
+  font-size: var(--p-s);
+}
+
 a {
   text-decoration: none;
   color: inherit;
   text-transform: uppercase;
+  display: inline-block;
+  width: 100%;
 }
 
 img {

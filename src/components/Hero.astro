@@ -33,7 +33,7 @@ const home = await response.json();
 <div class="heroSection">
   <h1>{home.data.home.heroTitle}</h1>
   <p>
-   {home.data.home.heroDescription}
+    {home.data.home.heroDescription}
   </p>
   <div class="buttons">
     <PrimaryButton buttonText="packages" />
@@ -41,6 +41,15 @@ const home = await response.json();
   </div>
 </div>
 
-<style></style>
+<style>
+  .heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--white);
+  }
+</style>
 
 <script></script>

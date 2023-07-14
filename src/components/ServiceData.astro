@@ -17,6 +17,9 @@ const response = await fetch(
             services {
                 title
                 slug
+                mainImage {
+                  url
+                }
             }
         }
     `,
@@ -27,8 +30,10 @@ const response = await fetch(
 const services = await response.json();
 ---
 
-{
-  services.data.services.map((service) => (
-    <ServiceUi title={service.title} imageSrc="" />
-  ))
-}
+<div class="serviceUiContainer">
+  {
+    services.data.services.map((service) => (
+      <ServiceUi title={service.title} imageSrc={service.mainImage.url} />
+    ))
+  }
+</div>

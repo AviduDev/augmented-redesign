@@ -19,6 +19,11 @@ import TestimonyData from "../components/TestimonyData.astro";
   <main>
     <!-- hero -->
     <section class="heroSection">
+      <img
+        class="heroBackground"
+        src="https://res.cloudinary.com/avidu/image/upload/v1688449132/Augmented/pexels-taras-budniak-1573007_wkl2dh.jpg"
+        alt=""
+      />
       <Hero />
     </section>
 
@@ -58,3 +63,21 @@ import TestimonyData from "../components/TestimonyData.astro";
     </section>
   </main>
 </Layout>
+
+<style>
+  .heroSection {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+</style>

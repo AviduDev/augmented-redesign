@@ -14,13 +14,48 @@ import PrimaryButton from "./PrimaryButton.astro";
 
 <div class="weddingGrid">
   <div class="weddingItem">
-    <h3>{title}</h3>
+    <div class="imageContainer">
+      <h3 class="weddingTitle">{title}</h3>
+      <img class="weddingImage" src={imgSrc} alt={imgAlt} />
+    </div>
+
     <p>{description}</p>
-    <img src={imgSrc} alt={imgAlt} />
     <PrimaryButton buttonText="full wedding" />
   </div>
 </div>
 
-<style></style>
+<style>
+  .weddingGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .weddingItem {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0 1rem 0;
+  }
+  .imageContainer {
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .weddingImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .weddingTitle {
+    position: absolute;
+    background-color: #fff;
+    padding: 0.5rem;
+  }
+</style>
 
 <script></script>
