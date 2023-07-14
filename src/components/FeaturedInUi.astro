@@ -1,0 +1,21 @@
+---
+export interface Props {
+  url: string;
+  imgUrl: string;
+  imgAlt: string;
+  title: string;
+}
+
+const { title, imgUrl, imgAlt, url } = Astro.props;
+---
+
+<div class="featuredInGrid">
+  <a href={url} class="featureContainer" target="_blank">
+    <img src={imgUrl} alt={imgAlt} />
+  </a>
+  <p>{title}</p>
+</div>
+
+<style></style>
+
+<script></script>

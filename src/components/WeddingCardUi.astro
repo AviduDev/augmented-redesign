@@ -1,9 +1,24 @@
 ---
+export interface Props {
+  title: string;
+  description: string;
+  imgSrc: string;
+  imgAlt: string;
+}
 
+const { title, description, imgSrc, imgAlt } = Astro.props;
+
+// imports
+import PrimaryButton from "./PrimaryButton.astro";
 ---
 
-<div class="weddingCardContainer">
-    wedding container
+<div class="weddingGrid">
+  <div class="weddingItem">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <img src={imgSrc} alt={imgAlt} />
+    <PrimaryButton buttonText="full wedding" />
+  </div>
 </div>
 
 <style></style>

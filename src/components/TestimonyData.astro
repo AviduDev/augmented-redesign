@@ -1,0 +1,45 @@
+---
+// imports
+import TestimonyUi from "./TestimonyUi.astro";
+
+// data fetching
+const response = await fetch(
+  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
+
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        {
+            testimonies {
+                description
+                names
+                coupleImage {
+                url
+                }
+            }
+        }
+    `,
+    }),
+  }
+);
+
+const testimonies = await response.json();
+---
+
+<div class="testimonyContainer">
+  {
+    testimonies.data.testimonies.map((testimony) => (
+      <TestimonyUi
+        description={testimony.description}
+        imgSrc={testimony.coupleImage.url}
+        imgAlt={testimony.names}
+        names={testimony.names}
+      />
+    ))
+  }
+</div>

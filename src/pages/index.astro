@@ -3,11 +3,13 @@
 import Layout from "../layouts/Layout.astro";
 // components
 import Hero from "../components/Hero.astro";
-import ServiceUi from "../components/ServiceUi.astro";
 import Quote from "../components/Quote.astro";
-import FeaturedIn from "../components/FeaturedIn.astro";
+import FeaturedIn from "../components/FeaturedInData.astro";
 import GoogleReviews from "../components/GoogleReviews.astro";
-import TestimonyUi from "../components/TestimonyUi.astro";
+import ServiceData from "../components/ServiceData.astro";
+import WeddingData from "../components/WeddingData.astro";
+import WhyUs from "../components/WhyUs.astro";
+import TestimonyData from "../components/TestimonyData.astro";
 ---
 
 <Layout
@@ -22,15 +24,25 @@ import TestimonyUi from "../components/TestimonyUi.astro";
 
     <!-- services -->
     <section class="servicesSection">
-      <ServiceUi />
+      <ServiceData />
     </section>
 
     <!-- weddings -->
     <section class="quoteSection">
+      <WeddingData />
+    </section>
+
+    <!-- Quote -->
+    <section class="quoteSection">
       <Quote />
     </section>
 
-    <!-- why us -->
+    <!-- Why us -->
+    <section class="whysU">
+      <WhyUs />
+    </section>
+
+    <!-- Featured In -->
     <section class="featuredIn">
       <FeaturedIn />
     </section>
@@ -42,7 +54,7 @@ import TestimonyUi from "../components/TestimonyUi.astro";
 
     <!-- testimony -->
     <section class="testimonySection">
-      <TestimonyUi />
+      <TestimonyData />
     </section>
   </main>
 </Layout>

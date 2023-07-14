@@ -1,9 +1,18 @@
 ---
+export interface Props {
+  description: string;
+  imgSrc: string;
+  imgAlt: string;
+  names: string;
+}
 
+const { description, imgSrc, imgAlt, names } = Astro.props;
 ---
 
-<div class="testimonyContainer">
-    testimonyUI
+<div class="testimonyGrid">
+  <img src={imgSrc} alt={imgAlt} />
+  <p>{description}</p>
+  <p>{names}</p>
 </div>
 
 <style></style>

@@ -1,14 +1,39 @@
 ---
+// imports
 import PrimaryButton from "./PrimaryButton.astro";
 import SecondaryButton from "./SecondaryButton.astro";
+
+// data fetching
+const response = await fetch(
+  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application.json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        {
+        home(where: {id: "clk2511yi3iqw0b1fy3ohm0ao"}) {
+          heroTitle
+          heroDescription
+          quote
+          whysUs
+        }
+      }
+    `,
+    }),
+  }
+);
+
+const home = await response.json();
 ---
 
 <div class="heroSection">
-  <h1>augmented arts weddings</h1>
+  <h1>{home.data.home.heroTitle}</h1>
   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti accusamus
-    minus illo repellendus vel qui. Temporibus aperiam tenetur quo consequuntur
-    quam ipsum corrupti itaque dignissimos!
+   {home.data.home.heroDescription}
   </p>
   <div class="buttons">
     <PrimaryButton buttonText="packages" />

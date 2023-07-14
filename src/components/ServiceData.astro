@@ -1,0 +1,34 @@
+---
+import ServiceUi from "./ServiceUi.astro";
+
+// data fetching
+const response = await fetch(
+  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
+
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        {
+            services {
+                title
+                slug
+            }
+        }
+    `,
+    }),
+  }
+);
+
+const services = await response.json();
+---
+
+{
+  services.data.services.map((service) => (
+    <ServiceUi title={service.title} imageSrc="" />
+  ))
+}

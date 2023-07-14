@@ -1,9 +1,19 @@
 ---
+export interface Props {
+  title: string;
+  imageSrc: string;
+}
 
+const { title, imageSrc } = Astro.props;
 ---
 
 <div class="serviceUiContainer">
-    serviceui
+  <div class="serviceGrid">
+    <a href="#" class="serviceItem">
+      <h3>{title}</h3>
+      <img src={imageSrc} alt="" class="background" />
+    </a>
+  </div>
 </div>
 
 <style></style>

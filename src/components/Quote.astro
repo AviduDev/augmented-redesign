@@ -1,10 +1,34 @@
 ---
+// data fetching
+const response = await fetch(
+  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application.json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        {
+        home(where: {id: "clk2511yi3iqw0b1fy3ohm0ao"}) {
+          heroTitle
+          heroDescription
+          quote
+          whysUs
+        }
+      }
+    `,
+    }),
+  }
+);
 
+const home = await response.json();
 ---
 
-
 <div class="quoteContainer">
-    quote
+  <p>{home.data.home.quote}</p>
+  <p>–Augmented Arts Weddings</p>
 </div>
 
 <style></style>

@@ -1,0 +1,49 @@
+---
+// data fetching
+
+import FeaturedInUi from "./FeaturedInUi.astro";
+
+const response = await fetch(
+  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
+
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
+        {
+            featuredIns {
+                title
+                logo {
+                url
+                }
+                url
+            }
+        }
+    `,
+    }),
+  }
+);
+
+const featuredIns = await response.json();
+---
+
+<div class="featuredInContainer">
+  <h2>featured in</h2>
+  {
+    featuredIns.data.featuredIns.map((featuredIn) => (
+      <FeaturedInUi
+        title={featuredIn.title}
+        url={featuredIn.url}
+        imgAlt={featuredIn.title}
+        imgUrl={featuredIn.logo.url}
+      />
+    ))
+  }
+</div>
+<style></style>
+
+<script></script>

@@ -5,12 +5,19 @@ export interface Props {
 const { buttonText } = Astro.props;
 ---
 
-<a href="#" class="primaryButton">
-  {buttonText}
-</a>
+<button class="buttonContainer">
+  <a href="#" class="buttonLink">
+    {buttonText}
+  </a>
+</button>
 
 <style>
-  .primaryButton {
+  .buttonLink {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  .buttonContainer {
     border-radius: 0.1rem;
     padding: 0.5rem;
     margin: 0.5rem;
