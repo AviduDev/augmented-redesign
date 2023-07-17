@@ -15,7 +15,7 @@ const response = await fetch(
     body: JSON.stringify({
       query: `
         {
-            testimonies {
+            testimonies(first: 3) {
                 description
                 names
                 coupleImage {

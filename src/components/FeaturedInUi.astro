@@ -12,10 +12,16 @@ const { title, imgUrl, imgAlt, url } = Astro.props;
 <div class="featuredInGrid">
   <a href={url} class="featureContainer" target="_blank">
     <img src={imgUrl} alt={imgAlt} />
+    <p>{title}</p>
   </a>
-  <p>{title}</p>
 </div>
 
-<style></style>
+<style>
+  .featureContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
 
 <script></script>

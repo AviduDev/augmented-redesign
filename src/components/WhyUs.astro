@@ -15,7 +15,9 @@ const response = await fetch(
           heroTitle
           heroDescription
           quote
-          whysUs
+          whysUs {
+            html
+          }
         }
       }
     `,
@@ -28,11 +30,7 @@ const home = await response.json();
 
 <div class="whyUsContainer">
   <h2>why us</h2>
-  <p>Augmented Arts Weddings is a Melbourne based photography and videography team dedicated in capturing the most precious moments of your wedding dayFor 7 years we've been perfecting the craft of making memories that will last a lifetime. 
-
-    Having a narrative to cherish for the rest of your life is about being able to look back and smile at happy times you missed at the time, and seeing the joy on the faces of the people closest to you.
-    
-    We try to differentiate styles, to make every wedding unique and exciting. You only get one chance to get married, so make the most of it by making sure you're in the right spot at the right time, that the moment is beautifully captured, and that you can revisit the joy and love you felt on your special day!</p>
+  <Fragment set:html={home.data.home.whysUs.html} />
 </div>
 
 <style></style>
