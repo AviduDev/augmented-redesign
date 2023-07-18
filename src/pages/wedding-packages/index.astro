@@ -1,7 +1,28 @@
 ---
-import Layout from "../../layouts/Layout.astro"
+// imports
+import Layout from "../../layouts/Layout.astro";
+import VideoPackages from "../../components/VideoPackages.astro";
+import PhotoPackages from "../../components/PhotoPackages.astro";
 ---
 
 <Layout title="" description="">
-    <h1>wedding packages</h1>
+  <main>
+    <section class="topSection">
+      <h1>wedding packages</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus iusto
+        deserunt quo, ex tempora aliquid illo nihil non adipisci dignissimos.
+      </p>
+    </section>
+
+    <section class="packageContainer">
+      <h2>photography packages</h2>
+      <PhotoPackages />
+    </section>
+
+    <section class="packageContainer">
+      <h2>videography packages</h2>
+      <VideoPackages />
+    </section>
+  </main>
 </Layout>
