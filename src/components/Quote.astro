@@ -1,34 +1,16 @@
 ---
 // data fetching
-const response = await fetch(
-  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application.json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      query: `
-        {
-        home(where: {id: "clk2511yi3iqw0b1fy3ohm0ao"}) {
-          heroTitle
-          heroDescription
-          quote
-          whysUs
-        }
-      }
-    `,
-    }),
-  }
-);
+export interface Props {
+  quote: string;
+  quoteName: string;
+}
 
-const home = await response.json();
+const { quote, quoteName } = Astro.props;
 ---
 
 <div class="quoteContainer">
-  <p class="quote des">“Love & Forever Here at Augmented Arts Weddings, we capture the dear soul that join together in one special day, professionally curated, exported for tears and joy..."</p>
-  <p class="quote name">–Augmented Arts Weddings</p>
+  <p class="quote des">{quote}"</p>
+  <p class="quote name">{quoteName}</p>
   <div class="background"></div>
 </div>
 

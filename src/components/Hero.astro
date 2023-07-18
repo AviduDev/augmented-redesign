@@ -4,36 +4,18 @@ import PrimaryButton from "./PrimaryButton.astro";
 import SecondaryButton from "./SecondaryButton.astro";
 
 // data fetching
-const response = await fetch(
-  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application.json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      query: `
-        {
-        home(where: {id: "clk2511yi3iqw0b1fy3ohm0ao"}) {
-          heroTitle
-          heroDescription
-          quote
-          whysUs
-        }
-      }
-    `,
-    }),
-  }
-);
+export interface Props {
+  heroTitle: string;
+  heroDes: string;
+}
 
-const home = await response.json();
+const { heroTitle, heroDes } = Astro.props;
 ---
 
 <div class="heroSection">
-  <h1>augmented arts weddings</h1>
+  <h1>{heroTitle}</h1>
   <p>
-    melbourne based wedding photography and videograhpy agency with over 7 years of experience in the industry.
+   {heroDes}
   </p>
   <div class="buttons">
     <PrimaryButton buttonText="packages" />

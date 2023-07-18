@@ -5,11 +5,13 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Quote from "../components/Quote.astro";
 import FeaturedIn from "../components/FeaturedInData.astro";
-import GoogleReviews from "../components/GoogleReviews.astro";
+
 import ServiceData from "../components/ServiceData.astro";
 import WeddingData from "../components/WeddingData.astro";
 import WhyUs from "../components/WhyUs.astro";
 import TestimonyData from "../components/TestimonyData.astro";
+
+// dataaaaaa
 ---
 
 <Layout
@@ -24,7 +26,10 @@ import TestimonyData from "../components/TestimonyData.astro";
         src="https://res.cloudinary.com/avidu/image/upload/v1688449132/Augmented/pexels-taras-budniak-1573007_wkl2dh.jpg"
         alt=""
       />
-      <Hero />
+      <Hero
+        heroDes="melbourne based wedding photography and videograhpy agency with over 7 years of experience in the industry."
+        heroTitle="augmented arts weddings"
+      />
     </section>
 
     <!-- services -->
@@ -39,12 +44,17 @@ import TestimonyData from "../components/TestimonyData.astro";
 
     <!-- Quote -->
     <section class="quoteSection">
-      <Quote />
+      <Quote
+        quote="“Love & Forever Here at Augmented Arts Weddings, we capture the dear soul that join together in one special day, professionally curated, exported for tears and joy..."
+        quoteName="-Augmented Arts Weddings"
+      />
     </section>
 
     <!-- Why us -->
-    <section class="whysU">
-      <WhyUs />
+    <section class="whyUs">
+      <WhyUs
+        whyUs="Augmented Arts Weddings is a Melbourne based photography and videography team dedicated in capturing the most precious moments of your wedding dayFor 7 years we've been perfecting the craft of making memories that will last a lifetime. Having a narrative to cherish for the rest of your life is about being able to look back and smile at happy times you missed at the time, and seeing the joy on the faces of the people closest to you. We try to differentiate styles, to make every wedding unique and exciting. You only get one chance to get married, so make the most of it by making sure you're in the right spot at the right time, that the moment is beautifully captured, and that you can revisit the joy and love you felt on your special day!"
+      />
     </section>
 
     <!-- Featured In -->

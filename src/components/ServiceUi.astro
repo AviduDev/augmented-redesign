@@ -2,13 +2,14 @@
 export interface Props {
   title: string;
   imageSrc: string;
+  slug: string;
 }
 
-const { title, imageSrc } = Astro.props;
+const { title, imageSrc, slug } = Astro.props;
 ---
 
 <div class="serviceGrid">
-  <a href="#" class="serviceItem">
+  <a href={`/${slug}`} class="serviceItem">
     <img src={imageSrc} alt="" class="background" />
     <h3 class="serviceTitle">{title}</h3>
   </a>

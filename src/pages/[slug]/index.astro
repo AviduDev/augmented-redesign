@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// datas
+export async function getStaticPaths() {
+  const response = await fetch(
+    "https://api-ap-southeast-2.hygraph.com/v2/clk221xts0epd01uegwso9jj6/master",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+        {
+          services {
+            title
+            slug
+            description
+            providedServices {
+              html
+            }
+            mainImage {
+              url
+            }
+          }
+        }
+      `,
+      }),
+    }
+  );
+  const services = await response.json();
+  const paths = services.data.services.map((service) => ({
+    params: {
+      slug: service.slug,
+    },
+    props: {
+      service,
+    },
+  }));
+
+  return paths;
+}
+
+const service = Astro.props.service;
+---
+
+<Layout title={service.title} description="">
+  <main>
+    <section class="topContainer">
+      <h1>{service.title}</h1>
+      <img src={service.mainImage.url} alt={service.title} />
+    </section>
+
+    <section class="description">
+      <p>{service.description}</p>
+    </section>
+
+    <section class="serviceContainer">
+      <div>
+        <h2>included services</h2>
+        <div class="itemContainer">
+          <Fragment set:html={service.providedServices.html} />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .topContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>

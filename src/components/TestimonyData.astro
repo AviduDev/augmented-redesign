@@ -15,13 +15,14 @@ const response = await fetch(
     body: JSON.stringify({
       query: `
         {
-            testimonies(first: 3) {
-                description
-                names
-                coupleImage {
-                url
-                }
-            }
+          testimonies {
+    coupleImage {
+      url
+    }
+    description
+    names
+    title
+  }
         }
     `,
     }),

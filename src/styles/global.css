@@ -55,15 +55,15 @@ button {
 }
 
 h1 {
-  font-size: var(--h-m);
-}
-
-h2 {
   font-size: var(--h-s);
 }
 
-h3 {
+h2 {
   font-size: var(--h-xs);
+}
+
+h3 {
+  font-size: var(--h-2xs);
 }
 
 h4 {

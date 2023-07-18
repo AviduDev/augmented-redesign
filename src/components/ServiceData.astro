@@ -33,7 +33,11 @@ const services = await response.json();
 <div class="serviceUiContainer">
   {
     services.data.services.map((service) => (
-      <ServiceUi title={service.title} imageSrc={service.mainImage.url} />
+      <ServiceUi
+        title={service.title}
+        imageSrc={service.mainImage.url}
+        slug={service.slug}
+      />
     ))
   }
 </div>

@@ -1,36 +1,15 @@
 ---
 // data fetching
-const response = await fetch(
-  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application.json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      query: `
-        {
-        home(where: {id: "clk2511yi3iqw0b1fy3ohm0ao"}) {
-          heroTitle
-          heroDescription
-          quote
-          whysUs {
-            html
-          }
-        }
-      }
-    `,
-    }),
-  }
-);
+export interface Props {
+  whyUs: string;
+}
 
-const home = await response.json();
+const { whyUs } = Astro.props;
 ---
 
 <div class="whyUsContainer">
   <h2>why us</h2>
-  <Fragment set:html={home.data.home.whysUs.html} />
+  <p>{whyUs}</p>
 </div>
 
 <style></style>
