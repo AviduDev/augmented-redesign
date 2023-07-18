@@ -4,9 +4,10 @@ export interface Props {
   description: string;
   imgSrc: string;
   imgAlt: string;
+  slug: string;
 }
 
-const { title, description, imgSrc, imgAlt } = Astro.props;
+const { title, description, imgSrc, imgAlt, slug } = Astro.props;
 
 // imports
 import PrimaryButton from "./PrimaryButton.astro";
@@ -20,7 +21,7 @@ import PrimaryButton from "./PrimaryButton.astro";
     </div>
 
     <p>{description}</p>
-    <PrimaryButton buttonText="full wedding" />
+    <PrimaryButton link={`/weddings/${slug}`} buttonText="full wedding" />
   </div>
 </div>
 

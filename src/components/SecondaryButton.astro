@@ -1,12 +1,13 @@
 ---
 export interface Props {
   buttonText: string;
+  link: string;
 }
-const { buttonText } = Astro.props;
+const { buttonText, link } = Astro.props;
 ---
 
 <button class="buttonContainer">
-  <a href="" class="buttonLink">
+  <a href={link} class="buttonLink">
     {buttonText}
   </a>
 </button>

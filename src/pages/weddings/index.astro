@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+// imports
+import PrimaryButton from "../../components/PrimaryButton.astro";
+import WeddingCardUi from "../../components/WeddingCardUi.astro";
+
+const first = 10;
+
+// data fetching
+const response = await fetch(
+  "https://ap-southeast-2.cdn.hygraph.com/content/clk221xts0epd01uegwso9jj6/master",
+
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+
+    body: JSON.stringify({
+      query: `
+        {
+            weddings(first: ${first}) {
+                title
+                description
+                mainImage {
+                url
+                }
+                slug
+            }
+        }
+    `,
+    }),
+  }
+);
+
+const weddings = await response.json();
+---
+
+<!-- ----------------------------------------- -->
+<Layout title="" description="">
+  <main>
+    <section class="topSection">
+        <h1>weddings</h1>
+    </section>
+
+    <section class="weddingsSection">
+    <div class="weddingContainer">
+      {
+        weddings.data.weddings.map((wedding) => (
+          <WeddingCardUi
+            title={wedding.title}
+            description={wedding.description}
+            imgSrc={wedding.mainImage.url}
+            imgAlt={wedding.title}
+            slug={wedding.slug}
+          />
+        ))
+      }
+    </div>
+</section>
+  </main>
+</Layout>
+
+<!-- ---------------------------------------- -->
+
+<style>
+  .weddingContainer {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

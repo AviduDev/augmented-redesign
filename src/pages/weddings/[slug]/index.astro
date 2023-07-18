@@ -1,0 +1,149 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+
+// dataaaaaaaas
+export async function getStaticPaths() {
+  const response = await fetch(
+    "https://api-ap-southeast-2.hygraph.com/v2/clk221xts0epd01uegwso9jj6/master",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+        {
+            weddings {
+                slug
+                title
+                description
+                date
+                location
+                collaboration
+                tag
+                mainImage {
+                    url
+                }
+                albumImages {
+                    url
+                }
+            }
+        }
+      `,
+      }),
+    }
+  );
+  const weddings = await response.json();
+  const paths = weddings.data.weddings.map((wedding) => ({
+    params: {
+      slug: wedding.slug,
+    },
+    props: {
+      wedding,
+    },
+  }));
+
+  return paths;
+}
+
+const wedding = Astro.props.wedding;
+---
+
+<!-- -------------------------------------------------- -->
+<Layout title="" description="">
+  <main>
+    <section class="topSection">
+      <div class="titleContainer">
+        <h1>{wedding.title}</h1>
+        <ul>
+          {
+            wedding.tag.map((tags) => (
+              <li class="weddingTags">
+                <p>✨{tags}✨</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <img src={wedding.mainImage.url} alt={wedding.title} />
+    </section>
+
+    <section class="description">
+      <p>{wedding.description}</p>
+    </section>
+
+    <section class="detailsSection">
+      <ul class="detailsWrapper">
+        <li class="detailItem">
+          <p><b>Date:</b></p>
+          <p>{wedding.date}</p>
+        </li>
+
+        <hr />
+
+        <li class="detailItem">
+          <p><b>Location:</b></p>
+          <p>{wedding.location}</p>
+        </li>
+
+        <hr />
+
+        <li class="detailItem">
+          <p><b>Collaboration:</b></p>
+          <p>{wedding.collaboration}</p>
+        </li>
+
+        <hr />
+      </ul>
+    </section>
+
+    <section class="albumImages">
+      <ul class="albumWrapper">
+        {
+          wedding.albumImages.map((album: any) => (
+            <li>
+              <img src={album.url} alt={wedding.title} loading="lazy" />
+            </li>
+            ))
+        }
+      </ul>
+    </section>
+  </main>
+</Layout>
+
+<!-- -------------------------------------------------- -->
+
+<style>
+  .topSection {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .detailsSection {
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+  .weddingTags {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .detailsWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .detailItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+</style>

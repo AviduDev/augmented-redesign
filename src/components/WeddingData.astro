@@ -3,7 +3,7 @@
 import PrimaryButton from "./PrimaryButton.astro";
 import WeddingCardUi from "./WeddingCardUi.astro";
 
-const first = 5;
+const first = 3;
 
 // data fetching
 const response = await fetch(
@@ -19,7 +19,7 @@ const response = await fetch(
     body: JSON.stringify({
       query: `
         {
-            weddings(first: 3) {
+            weddings(first: ${first}) {
                 title
                 description
                 mainImage {
@@ -44,10 +44,11 @@ const weddings = await response.json();
         description={wedding.description}
         imgSrc={wedding.mainImage.url}
         imgAlt={wedding.title}
+        slug={wedding.slug}
       />
     ))
   }
-  <PrimaryButton buttonText="see all weddings" />
+  <PrimaryButton link="/weddings" buttonText="see all weddings" />
 </div>
 
 <style>
