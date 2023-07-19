@@ -61,5 +61,9 @@ const { title, imageSrc, slug } = Astro.props;
 
   /* responsive design */
 
-
+  @media screen and (min-width: 1024px) {
+    .serviceItem {
+      height: clamp(80vh, 60vh, 90vh);
+    }
+  }
 </style>
