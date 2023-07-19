@@ -63,4 +63,20 @@ const weddings = await response.json();
       gap: 1rem;
     }
   }
+
+  @media screen and (min-width: 1440px) {
+    .weddingContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    .weddingContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+  }
 </style>
