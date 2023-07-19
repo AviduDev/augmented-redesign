@@ -1,7 +1,62 @@
 ---
-import Layout from "../../layouts/Layout.astro"
+import Layout from "../../layouts/Layout.astro";
+import Form from "../../components/Form.astro";
+import Map from "../../components/Map.astro";
 ---
 
 <Layout title="" description="">
-    <h1>contact us</h1>
+  <main>
+    <section class="topSection">
+      <h1>contact us</h1>
+    </section>
+
+    <section class="formSection">
+      <Form />
+    </section>
+
+    <section class="mapSection">
+      <Map />
+    </section>
+
+    <section class="addressDetails">
+      <div class="address item">
+        <h4>Melbourne</h4>
+        <address>
+          770 Waverley Rd, <br />
+          Glen Waverley VIC 3150, <br />
+          Australia
+        </address>
+      </div>
+
+      <div class="tele item">
+        <h4>Inquiries</h4>
+        <a href="tel:+61 434 837 055" target="_blank">+61 434 837 055</a>
+        <a href="mailto:info.augmentedarts@gmail.com" target="_blank">
+          info.augmentedarts@gmail.com
+        </a>
+      </div>
+
+      <div class="hours item">
+        <h4>business hours</h4>
+        <ul>
+          <li>Monday: 9.00am-6.00pm</li>
+          <li>Tuesday: 9.00am-6.00pm</li>
+          <li>Wednesday: 9.00am-6.00pm</li>
+          <li>Thursday: 9.00am-6.00pm</li>
+          <li>Friday: 9.00am-6.00pm</li>
+        </ul>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .item {
+    margin-top: 1rem;
+  }
+
+  .formSection {
+    color: var(--white);
+    background-color: var(--black);
+  }
+</style>

@@ -1,0 +1,109 @@
+<form
+  method="POST"
+  action="https://formsubmit.co/avidu97@gmail.com"
+  enctype="multipart/form-data"
+>
+  <div class="formItem">
+    <label for="name"> Name:*</label>
+    <input type="text" name="name" placeholder="" required />
+  </div>
+
+  <div class="formItem">
+    <label for="email"> Email:*</label>
+    <input type="email" name="email" placeholder="" required />
+  </div>
+
+  <div class="formItem">
+    <label for="tel"> Phone:*</label>
+    <input type="tel" name="tel" placeholder="" id="" required />
+  </div>
+
+  <div class="formItem">
+    <label for="message"> Message:*</label>
+    <textarea name="message" placeholder=""></textarea>
+  </div>
+
+  <div class="radioItems">
+    <fieldset class="formItem">
+      <legend>How did you hear about us:</legend>
+
+      <div>
+        <input type="radio" id="google" name="where" value="google" checked />
+        <label for="google">Google</label>
+      </div>
+
+      <div>
+        <input type="radio" id="social" name="where" value="social" />
+        <label for="social">Social Media</label>
+      </div>
+
+      <div>
+        <input type="radio" id="friend" name="where" value="friend" />
+        <label for="friend">Friend</label>
+      </div>
+    </fieldset>
+  </div>
+
+  <!--  -->
+  <input type="hidden" name="_next" value="http://localhost:3000/contact-us" />
+  <input type="hidden" name="_captcha" value="false" />
+  <!--  -->
+
+  <button type="submit">Send Test</button>
+</form>
+
+<style>
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0 0 0;
+    align-items: flex-end;
+  }
+
+  form input {
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+
+  input {
+    border: none;
+    width: 70%;
+  }
+
+  input::placeholder {
+    color: darkgray;
+    text-align: center;
+  }
+
+  input {
+    background-color: #000000;
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    width: 70%;
+    background-color: #000000;
+  }
+
+  button {
+    border-radius: 0.1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: var(--white);
+    color: var(--black);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .radioItems {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }
+</style>
