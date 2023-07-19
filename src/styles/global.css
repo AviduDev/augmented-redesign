@@ -102,3 +102,45 @@ img {
 ul {
   list-style: none;
 }
+
+p {
+  max-width: 800px;
+}
+
+/* responsive design */
+
+
+@media screen and (min-width: 576px) {
+  h1 {
+    font-size: var(--h-m);
+  }
+
+  h2 {
+    font-size: var(--h-s);
+  }
+
+  h3 {
+    font-size: var(--h-xs);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: var(--h-l);
+  }
+
+  h2 {
+    font-size: var(--h-m);
+  }
+
+  h3 {
+    font-size: var(--h-s);
+  }
+
+  a,
+  p {
+    font-size: var(--p-m);
+  }
+}
+
+@media screen and (min-width: 1024px) {}

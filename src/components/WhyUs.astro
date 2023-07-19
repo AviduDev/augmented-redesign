@@ -12,6 +12,15 @@ const { whyUs } = Astro.props;
   <p>{whyUs}</p>
 </div>
 
-<style></style>
+<style>
+  @media screen and (min-width: 1024px) {
+    .whyUsContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>
 
 <script></script>

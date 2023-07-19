@@ -13,11 +13,11 @@ const { heroTitle, heroDes } = Astro.props;
 ---
 
 <div class="heroSection">
-  <h1>{heroTitle}</h1>
-  <p>
-   {heroDes}
+  <h1 class="heroTitle">{heroTitle}</h1>
+  <p class="heroDes">
+    {heroDes}
   </p>
-  <div class="buttons">
+  <div class="heroButtons">
     <PrimaryButton link="/wedding-packages" buttonText="packages" />
     <SecondaryButton link="/weddings" buttonText="weddings" />
   </div>
@@ -32,6 +32,17 @@ const { heroTitle, heroDes } = Astro.props;
     min-height: 100vh;
     color: var(--white);
   }
-</style>
 
-<script></script>
+  .heroTitle {
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  .heroDes {
+    text-align: center;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  .heroButtons {
+    margin: 1rem 0 0.5rem 0;
+  } 
+</style>

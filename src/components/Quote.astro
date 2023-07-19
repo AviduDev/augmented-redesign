@@ -9,8 +9,10 @@ const { quote, quoteName } = Astro.props;
 ---
 
 <div class="quoteContainer">
-  <p class="quote des">{quote}"</p>
-  <p class="quote name">{quoteName}</p>
+  <div class="quoteWrapper">
+    <p class="quote des">{quote}"</p>
+    <p class="quote name">{quoteName}</p>
+  </div>
   <div class="background"></div>
 </div>
 
@@ -40,13 +42,31 @@ const { quote, quoteName } = Astro.props;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.7);
   }
+  
 
-  .quote {
+  .quoteWrapper {
     z-index: 2;
   }
 
   .name {
     align-self: flex-end;
     margin-top: 1rem;
+  }
+
+  .quoteWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* responsive design */
+
+  @media screen and (min-width: 1024px) {
+    .quoteWrapper {
+      max-width: 600px;
+    }
+
+    .quoteContainer {
+      height: 80vh;
+    }
   }
 </style>

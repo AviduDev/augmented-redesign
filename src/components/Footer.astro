@@ -1,10 +1,12 @@
 <footer>
+  <div class="details">
   <p class="footerDes">Augmented arts weddings is a part of fernasara group pvt limited</p>
   <ul class="policies">
     <li><a class="policyLink" href="#">Privacy Policy</a></li>
     <li><a class="policyLink" href="#">Terms and Conditions</a></li>
     <li><a class="policyLink" href="#">Refund Policy</a></li>
   </ul>
+</div>
   <hr>
   Copyright©2023 Augmented Arts Weddings
 </footer>
@@ -25,11 +27,36 @@
     margin: 0.5rem 0 0.5rem 0;
   }
 
+  
+
   .policyLink {
     text-decoration: underline;
+    text-transform: capitalize;
+    word-break: keep-all;
+    margin: 1rem;
+  }
+
+  .footerDes {
+    max-width: 500px;
   }
 
   hr {
     margin: 0.5rem 0 0.5rem 0;
+  }
+
+  /* responsive design */
+
+  @media screen and (min-width: 1024px) {
+    .details {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .policies {
+      display: flex;
+      flex-direction: row;
+    }
   }
 </style>

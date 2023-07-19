@@ -3,7 +3,7 @@
 import PrimaryButton from "./PrimaryButton.astro";
 import WeddingCardUi from "./WeddingCardUi.astro";
 
-const first = 3;
+const first = 4;
 
 // data fetching
 const response = await fetch(
@@ -48,12 +48,19 @@ const weddings = await response.json();
       />
     ))
   }
-  <PrimaryButton link="/weddings" buttonText="see all weddings" />
 </div>
 
 <style>
   .weddingContainer {
     display: flex;
     flex-direction: column;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .weddingContainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
   }
 </style>
