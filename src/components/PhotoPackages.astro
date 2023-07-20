@@ -30,7 +30,7 @@ const packages = await response.json();
   {
     packages.data.packages.map((pack: any) => (
       <div class="gridItem">
-        <h4 class="packageTitle">{pack.packageName}</h4>
+        <h3 class="packageTitle">{pack.packageName}</h3>
         <ul>
           {pack.packageFeatures.map((features: any) => (
             <li>

@@ -1,28 +1,55 @@
 <nav>
-  <a href="/" class="logo">AAW</a>
+  <div class="navContainer">
+  <a href="/" class="logo"><img src="/navlogo.png" height="50px" alt=""></a>
   <ul class="menuLinks">
-    <li><a href="/wedding-photography">Photography</a></li>
-    <li><a href="/wedding-videography">Videography</a></li>
-    <li><a href="/wedding-packages">Packages</a></li>
-    <li><a href="/wedding-tips">Wedding Tips</a></li>
-    <li><a href="/about-us">About</a></li>
-    <li><a href="/contact-us">Contact</a></li>
+    <li class="menuItem"><a href="/wedding-photography">Photography</a></li>
+    <li class="menuItem"><a href="/wedding-videography">Videography</a></li>
+    <li class="menuItem"><a href="/wedding-packages">Packages</a></li>
+    <li class="menuItem"><a href="/wedding-tips">Tips</a></li>
+    <li class="menuItem"><a href="/about-us">About</a></li>
+    <li class="menuItem"><a href="/contact-us">Contact</a></li>
   </ul>
+</div>
 </nav>
 
 <style>
   nav {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
-    width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    z-index: 10;
+    background-color: #000000;
+    color: white;
+    margin: 0 auto;
+  }
+
+  .navContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 90%;
+    margin: 0 auto;
+    padding: 0.5rem;
+
   }
 
   ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
   }
+
+  .menuItem {
+    margin: 0 0.5rem 0 0.5rem;
+    /* border-bottom: 2px solid black; */
+    transition: all ease-in-out 0.3s;
+  }
+
+  .menuItem:hover {
+    color: grey;
+  }
+
 </style>
