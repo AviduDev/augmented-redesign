@@ -103,7 +103,7 @@ const wedding = Astro.props.wedding;
       <ul class="albumWrapper">
         {
           wedding.albumImages.map((album: any) => (
-            <li>
+            <li class="albumItem">
               <img src={album.url} alt={wedding.title} loading="lazy" />
             </li>
             ))
@@ -127,6 +127,16 @@ const wedding = Astro.props.wedding;
   .detailsSection {
     color: var(--white);
     background-color: var(--black);
+  }
+
+  .albumWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .albumItem {
+    margin-top: 10vh;
   }
 
   .weddingTags {
