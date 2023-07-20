@@ -1,4 +1,6 @@
 ---
+import PrimaryButton from "../../components/PrimaryButton.astro";
+import SecondaryButton from "../../components/SecondaryButton.astro";
 import Layout from "../../layouts/Layout.astro";
 
 // datas
@@ -24,6 +26,9 @@ export async function getStaticPaths() {
             mainImage {
               url
             }
+            serviceList {
+              html
+            }
           }
         }
       `,
@@ -48,7 +53,7 @@ const service = Astro.props.service;
 
 <Layout title={service.title} description="">
   <main>
-    <section class="topContainer">
+    <section class="topSection">
       <h1>{service.title}</h1>
       <img src={service.mainImage.url} alt={service.title} />
     </section>
@@ -57,12 +62,26 @@ const service = Astro.props.service;
       <p>{service.description}</p>
     </section>
 
+    <section class="ctaSection">
+      <h3>Needs something else?</h3>
+      <div class="buttons">
+        <SecondaryButton link="/contact-us" buttonText="reach us" />
+      </div>
+    </section>
+
     <section class="serviceContainer">
       <div>
         <h2>included services</h2>
-        <div class="itemContainer">
-          <Fragment set:html={service.providedServices.html} />
-        </div>
+        <ul class="listContainer">
+          {
+            service.serviceList.map((services: any) => (
+              <li class="serviceListItem">
+                <Fragment set:html={services.html} />
+                <hr />
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </section>
   </main>
@@ -78,9 +97,31 @@ const service = Astro.props.service;
   }
 
   .serviceContainer {
-    color: var(--white);
-    background-color: var(--black);
+    max-width: 800px;
+    margin: 0 auto;
   }
 
+  .serviceListItem {
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 0 0.5rem 0;
+  }
 
+  hr {
+    margin: 0.5rem 0 0 0;
+  }
+
+  .ctaSection {
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+    margin: 1rem;
+  }
+
+  h2 {
+    margin: 1rem 0 2rem 0;
+  }
+
+  p {
+    margin: 0 auto;
+  }
 </style>

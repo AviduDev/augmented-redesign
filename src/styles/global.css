@@ -112,6 +112,15 @@ p {
   max-width: 800px;
 }
 
+/* ------------------------------------------ */
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ------------------------------------------ */
 /* responsive design */
 
 @media screen and (min-width: 576px) {

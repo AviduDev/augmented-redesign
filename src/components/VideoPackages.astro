@@ -31,7 +31,7 @@ const packages = await response.json();
   {
     packages.data.packages.map((pack: any) => (
       <div class="gridItem">
-        <h4 class="packageTitle">{pack.packageName}</h4>
+        <h3 class="packageTitle">{pack.packageName}</h3>
         <ul>
           {pack.packageFeatures.map((features) => (
             <li>
@@ -95,5 +95,26 @@ const packages = await response.json();
   .packageTitle {
     margin: 0.5rem 0 0.5rem 0;
     text-decoration: underline;
+    text-align: center;
+  }
+
+  /* responsive design */
+
+  @media screen and (min-width: 768px) {
+    .packageGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .packageGrid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .packageGrid {
+      max-width: 1200px;
+    }
   }
 </style>
