@@ -24,6 +24,7 @@
     background-color: #000000;
     color: white;
     margin: 0 auto;
+    display: none;
   }
 
   .navContainer {
@@ -50,6 +51,15 @@
 
   .menuItem:hover {
     color: grey;
+  }
+
+
+  /* responsive design */
+
+  @media screen and (min-width: 1024px) {
+    nav {
+      display: flex;
+    }
   }
 
 </style>

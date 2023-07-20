@@ -1,4 +1,5 @@
 ---
+
 export interface Props {
   packageTitle: string;
   features: string;
@@ -7,6 +8,7 @@ export interface Props {
 
 const { packageTitle, features, price } = Astro.props;
 ---
+
 
 <div class="packageGrid">
   <div class="gridItem">
@@ -23,4 +25,9 @@ const { packageTitle, features, price } = Astro.props;
     list-style: disc;
     padding-left: 0.5rem;
 }
+
+
+/* responsive deisgn */
+
+@media screen and (min-width: 576px) {}
 </style>
