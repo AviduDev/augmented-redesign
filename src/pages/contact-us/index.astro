@@ -12,9 +12,7 @@ import Map from "../../components/Map.astro";
 
     <section class="formSection">
       <Form />
-    </section>
-
-    <section class="mapSection">
+      <!-- ------------------------ -->
       <Map />
     </section>
 
@@ -58,5 +56,39 @@ import Map from "../../components/Map.astro";
   .formSection {
     color: var(--white);
     background-color: var(--black);
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* responsive design */
+
+  @media screen and (min-width: 768px) {
+    .addressDetails {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      place-content: center;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .formSection {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .addressDetails {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      place-content: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
   }
 </style>

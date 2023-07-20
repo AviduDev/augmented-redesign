@@ -22,6 +22,7 @@
     color: var(--white);
     margin-top: 1rem;
     align-items: center;
+    align-items: center;
   }
 
   .policies {
@@ -55,15 +56,14 @@
 
   @media screen and (min-width: 1024px) {
     .details {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
 
     .policies {
       display: flex;
       flex-direction: row;
+      justify-content: flex-end;
     }
   }
 </style>

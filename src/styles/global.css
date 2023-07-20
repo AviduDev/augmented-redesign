@@ -24,6 +24,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --black: #000;
   --white: #fff;
