@@ -11,13 +11,22 @@ const { description, imgSrc, imgAlt, names } = Astro.props;
 
 <div class="testimonyGrid">
   <div class="testimonyContainer">
-    <img src={imgSrc} alt={imgAlt} />
     <p>{description}</p>
-    <p class="coupleNames"><b>{names}</b></p>
+    <div class="details">
+      
+      <img src={imgSrc} alt={imgAlt} />
+      <p class="coupleNames"><b>{names}</b></p>
+    </div>
   </div>
 </div>
 
 <style>
+  img {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+  }
+
   .testimonyContainer {
     margin-top: 1rem;
     display: flex;
@@ -27,6 +36,13 @@ const { description, imgSrc, imgAlt, names } = Astro.props;
   .coupleNames {
     margin-top: 0.5rem;
     align-self: flex-end;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
   }
 </style>
 

@@ -5,7 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Quote from "../components/Quote.astro";
 import FeaturedIn from "../components/FeaturedInData.astro";
-
+import Form from "../components/Form.astro";
 import ServiceData from "../components/ServiceData.astro";
 import WeddingData from "../components/WeddingData.astro";
 import WhyUs from "../components/WhyUs.astro";
@@ -35,39 +35,109 @@ import Carousel from "../components/Carousel.astro";
       </h1>
     </section>
 
-
     <section class="carouselSection">
       <Carousel />
     </section>
     <!-- services -->
-    <section class="servicesSection">
+    <!-- <section class="servicesSection">
       <h2>our services</h2>
       <ServiceData />
-    </section>
+    </section> -->
 
     <!-- weddings -->
     <section class="quoteSection">
-      <h2>selected weddings</h2>
       <WeddingData />
     </section>
 
+    <!-- form -->
+
+    <section class="formSection">
+      <h2>drop us a line</h2>
+      <div class="formContainer">
+        <form
+          method="POST"
+          action="https://formsubmit.co/avidu97@gmail.com"
+          enctype="multipart/form-data"
+        >
+          <div class="formItem">
+            <label for="name"> Name:*</label>
+            <input type="text" name="name" placeholder="" required />
+          </div>
+
+          <div class="formItem">
+            <label for="email"> Email:*</label>
+            <input type="email" name="email" placeholder="" required />
+          </div>
+
+          <div class="formItem">
+            <label for="tel"> Phone:*</label>
+            <input type="tel" name="tel" placeholder="" id="" required />
+          </div>
+
+          <div class="formItem">
+            <label for="message"> Message:*</label>
+            <textarea name="message" placeholder=""></textarea>
+          </div>
+
+          <div class="radioItems">
+            <fieldset class="formItem">
+              <legend>How did you hear about us:</legend>
+
+              <div>
+                <input
+                  type="radio"
+                  id="google"
+                  name="where"
+                  value="google"
+                  checked
+                />
+                <label for="google">Google</label>
+              </div>
+
+              <div>
+                <input type="radio" id="social" name="where" value="social" />
+                <label for="social">Social Media</label>
+              </div>
+
+              <div>
+                <input type="radio" id="friend" name="where" value="friend" />
+                <label for="friend">Friend</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <!--  -->
+          <input
+            type="hidden"
+            name="_next"
+            value="http://localhost:3000/contact-us"
+          />
+          <input type="hidden" name="_captcha" value="false" />
+          <!--  -->
+
+          <button class="formBtn" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
     <!-- Quote -->
-    <section class="quoteSection">
+    <!-- <section class="quoteSection">
       <Quote
         quote="“Love & Forever Here at Augmented Arts Weddings, we capture the dear soul that join together in one special day, professionally curated, exported for tears and joy..."
         quoteName="-Augmented Arts Weddings"
       />
-    </section>
+    </section> -->
 
     <!-- Why us -->
-    <section class="whyUs">
+    <!-- <section class="whyUs">
       <WhyUs
         whyUs="Augmented Arts Weddings is a Melbourne based photography and videography team dedicated in capturing the most precious moments of your wedding dayFor 7 years we've been perfecting the craft of making memories that will last a lifetime. Having a narrative to cherish for the rest of your life is about being able to look back and smile at happy times you missed at the time, and seeing the joy on the faces of the people closest to you. We try to differentiate styles, to make every wedding unique and exciting. You only get one chance to get married, so make the most of it by making sure you're in the right spot at the right time, that the moment is beautifully captured, and that you can revisit the joy and love you felt on your special day!"
       />
-    </section>
+    </section> -->
 
     <!-- Featured In -->
     <section class="featuredIn">
+      <h2>featured in</h2>
       <FeaturedIn />
     </section>
 
@@ -78,7 +148,7 @@ import Carousel from "../components/Carousel.astro";
 
     <!-- testimony -->
     <section class="testimonySection">
-      <h2>kind words</h2>
+      <h2>What our clients say</h2>
       <TestimonyData />
     </section>
   </main>
@@ -128,5 +198,56 @@ import Carousel from "../components/Carousel.astro";
     height: 100vh;
     display: grid;
     place-content: center;
+  }
+
+  /* form styling */
+
+  .formItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0 0 0;
+    align-items: flex-end;
+  }
+
+  .formContainer {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  form input {
+    border-bottom: 1px solid rgb(0, 0, 0);
+  }
+
+  input {
+    border: none;
+    width: 70%;
+  }
+
+  input::placeholder {
+    color: darkgray;
+    text-align: center;
+  }
+
+  textarea {
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    width: 70%;
+  }
+
+  .formBtn {
+    border-radius: 0.1rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  h2 {
+    font-family: "Dancing Script", cursive;
+    text-transform: capitalize;
   }
 </style>
