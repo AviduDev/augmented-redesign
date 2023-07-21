@@ -42,24 +42,24 @@ const weddings = await response.json();
 <Layout title="" description="">
   <main>
     <section class="topSection">
-        <h1>weddings</h1>
+      <h1>weddings</h1>
     </section>
 
     <section class="weddingsSection">
-    <div class="weddingContainer">
-      {
-        weddings.data.weddings.map((wedding) => (
-          <WeddingCardUi
-            title={wedding.title}
-            description={wedding.description}
-            imgSrc={wedding.mainImage.url}
-            imgAlt={wedding.title}
-            slug={wedding.slug}
-          />
-        ))
-      }
-    </div>
-</section>
+      <div class="weddingContainer">
+        {
+          weddings.data.weddings.map((wedding) => (
+            <WeddingCardUi
+              title={wedding.title}
+              description={wedding.description}
+              imgSrc={wedding.mainImage.url}
+              imgAlt={wedding.title}
+              slug={wedding.slug}
+            />
+          ))
+        }
+      </div>
+    </section>
   </main>
 </Layout>
 
@@ -69,13 +69,15 @@ const weddings = await response.json();
   .weddingContainer {
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   @media screen and (min-width: 1024px) {
     .weddingContainer {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      gap: 2rem;
     }
   }
 
@@ -83,7 +85,6 @@ const weddings = await response.json();
     .weddingContainer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 1rem;
     }
   }
 
@@ -91,7 +92,6 @@ const weddings = await response.json();
     .weddingContainer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 1rem;
     }
   }
 </style>

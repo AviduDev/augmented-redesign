@@ -3,7 +3,7 @@
 import PrimaryButton from "./PrimaryButton.astro";
 import WeddingCardUi from "./WeddingCardUi.astro";
 
-const first = 4;
+const first = 5;
 
 // data fetching
 const response = await fetch(
@@ -53,7 +53,9 @@ const weddings = await response.json();
 <style>
   .weddingContainer {
     display: flex;
+    max-width: 1200px;
     flex-direction: column;
+    margin: 0 auto;
   }
 
   @media screen and (min-width: 1024px) {

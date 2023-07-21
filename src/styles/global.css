@@ -186,7 +186,7 @@ p {
 
   a,
   p {
-    font-size: var(--p-l);
+    font-size: var(--p-m);
   }
 }
 
@@ -205,7 +205,7 @@ p {
 
   a,
   p {
-    font-size: var(--p-xl);
+    font-size: var(--p-l);
   }
 
   section {
