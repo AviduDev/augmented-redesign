@@ -46,12 +46,22 @@ const testimonies = await response.json();
 </div>
 
 <style>
-  @media screen and (min-width: 1024px) {
+
+.testimonyContainer {
+  display: grid;
+  grid-row: 1fr;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+  /* @media screen and (min-width: 1024px) {
     .testimonyContainer {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 1rem;
     }
+
   }
 
   @media screen and (min-width: 1440px) {
@@ -68,5 +78,5 @@ const testimonies = await response.json();
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       gap: 1rem;
     }
-  }
+  } */
 </style>
