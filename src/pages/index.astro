@@ -21,7 +21,7 @@ import TestimonyData from "../components/TestimonyData.astro";
   <main>
     <!-- hero -->
     <section class="heroSection">
-      <img
+      <!-- <img
         class="heroBackground"
         src="https://res.cloudinary.com/avidu/image/upload/v1688449132/Augmented/pexels-taras-budniak-1573007_wkl2dh.jpg"
         alt=""
@@ -29,7 +29,10 @@ import TestimonyData from "../components/TestimonyData.astro";
       <Hero
         heroDes="melbourne based wedding photography and videograhpy agency with over 7 years of experience in the industry."
         heroTitle="augmented arts weddings"
-      />
+      /> -->
+      <video loop class="heroVideo" autoplay playsinline style="pointer-events: none;">
+        <source src="https://res.cloudinary.com/avidu/video/upload/v1689909045/Augmented/Melbourne_Professional_Photography_1_rdmai2.mp4" type="video/mp4">
+      </video>
     </section>
 
     <!-- services -->
@@ -78,20 +81,24 @@ import TestimonyData from "../components/TestimonyData.astro";
 </Layout>
 
 <style>
-  .heroSection {
+  /* .heroSection {
     background-color: rgba(0, 0, 0, 0.3);
     position: relative;
     padding: 0;
+  } */
+
+  .heroSection {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
   }
 
-  .heroBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    object-position: top;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
+.heroVideo {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
 </style>

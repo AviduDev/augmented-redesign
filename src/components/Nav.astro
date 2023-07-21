@@ -1,6 +1,6 @@
 <nav>
   <div class="navContainer">
-  <a href="/" class="logo"><img src="/navlogo.png" height="50px" alt=""></a>
+  <a href="/" class="logo"><img src="/navlogo.png" height="40px" alt=""></a>
   <ul class="menuLinks">
     <li class="menuItem"><a href="/wedding-photography">Photography</a></li>
     <li class="menuItem"><a href="/wedding-videography">Videography</a></li>
@@ -15,17 +15,18 @@
 
 <style>
   nav {
-    /* position: fixed; */
+    position: fixed;
     top: 0;
-    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     z-index: 10;
-    background-color: #000000;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     margin: 0 auto;
     display: none;
+    opacity: 80%;
   }
 
   .navContainer {
@@ -48,6 +49,10 @@
     margin: 0 0.5rem 0 0.5rem;
     /* border-bottom: 2px solid black; */
     transition: all ease-in-out 0.3s;
+  }
+
+  .menuItem a {
+    text-transform: capitalize;
   }
 
   .menuItem:hover {

@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: Arial;
+  font-family: "Times New Roman", Times, serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -80,10 +80,16 @@ h3,
 h3,
 h4 {
   text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
 }
 
 a {
   text-transform: capitalize;
+}
+
+a,
+p {
+  font-family: sans-serif;
 }
 
 h1,
