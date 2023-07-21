@@ -10,6 +10,7 @@ import ServiceData from "../components/ServiceData.astro";
 import WeddingData from "../components/WeddingData.astro";
 import WhyUs from "../components/WhyUs.astro";
 import TestimonyData from "../components/TestimonyData.astro";
+import Carousel from "../components/Carousel.astro";
 
 // dataaaaaa
 ---
@@ -21,25 +22,23 @@ import TestimonyData from "../components/TestimonyData.astro";
   <main>
     <!-- hero -->
     <section class="heroSection">
-      <!-- <img
-        class="heroBackground"
-        src="https://res.cloudinary.com/avidu/image/upload/v1688449132/Augmented/pexels-taras-budniak-1573007_wkl2dh.jpg"
-        alt=""
-      />
-      <Hero
-        heroDes="melbourne based wedding photography and videograhpy agency with over 7 years of experience in the industry."
-        heroTitle="augmented arts weddings"
-      /> -->
       <video class="heroVideo" muted autoplay loop playsinline>
-        <source
-          src="hero2.mp4"
-          type="video/mp4"
-        />
+        <source src="hero3.mp4" type="video/mp4" />
       </video>
 
       <img class="heroIcon" src="/heroIcon.svg" alt="" />
     </section>
 
+    <section class="heroDes">
+      <h1 class="heroTtl">
+        Melbourne's premium wedding photography & videography studio.
+      </h1>
+    </section>
+
+
+    <section class="carouselSection">
+      <Carousel />
+    </section>
     <!-- services -->
     <section class="servicesSection">
       <h2>our services</h2>
@@ -116,5 +115,18 @@ import TestimonyData from "../components/TestimonyData.astro";
     color: #ffffff;
     height: 50px;
     left: 50%;
+  }
+
+  .heroTtl {
+    font-family: "Dancing Script", cursive;
+    text-transform: capitalize;
+    font-size: 2vw;
+    text-align: center;
+  }
+
+  .heroDes {
+    height: 100vh;
+    display: grid;
+    place-content: center;
   }
 </style>
