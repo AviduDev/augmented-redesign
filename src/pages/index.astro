@@ -30,11 +30,14 @@ import TestimonyData from "../components/TestimonyData.astro";
         heroDes="melbourne based wedding photography and videograhpy agency with over 7 years of experience in the industry."
         heroTitle="augmented arts weddings"
       /> -->
-      <video loop class="heroVideo" autoplay playsinline style="pointer-events: none;">
-        <source src="hero.mp4" type="video/mp4">
-      </video>
+      <video class="heroVideo" autoplay loop playsinline width="250">
 
-      <img class="heroIcon" src="/heroIcon.svg" alt="">
+        <source src="hero.mp4" type="video/mp4">
+    
+  
+    </video>
+
+      <img class="heroIcon" src="/heroIcon.svg" alt="" />
     </section>
 
     <!-- services -->
@@ -96,21 +99,22 @@ import TestimonyData from "../components/TestimonyData.astro";
     position: relative;
   }
 
-.heroVideo {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: top;
-  z-index: 5;
-}
+  .heroVideo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    z-index: 8;
+    pointer-events: none;
+  }
 
-.heroIcon {
-  position: absolute;
-  bottom: 10vh;
-  z-index: 6;
-  color: #ffffff;
-  height: 50px;
-left: 50%;
-}
+  .heroIcon {
+    position: absolute;
+    bottom: 10vh;
+    z-index: 9;
+    color: #ffffff;
+    height: 50px;
+    left: 50%;
+  }
 </style>
