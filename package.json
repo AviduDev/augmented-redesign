@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.6.0",
-    "astro": "^2.8.1"
+    "@studio-freight/lenis": "^1.0.19",
+    "astro": "^2.8.1",
+    "ukiyojs": "^4.1.1"
   }
 }

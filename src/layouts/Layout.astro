@@ -34,3 +34,43 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
+
+
+<script>
+      // lenis
+      import Lenis from "@studio-freight/lenis";
+
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      // -----
+
+      // ukiyo
+      import Ukiyo from "ukiyojs";
+      // CSS selector
+      new Ukiyo(".ukiyo");
+
+      // or node
+      const imag = document.querySelectorAll(".ukiyo");
+      new Ukiyo(imag, {
+        scale: 1.1, // 1~2 is recommended
+        speed: 1.5, // 1~2 is recommended
+        willChange: true, // This may not be valid in all cases
+        wrapperClass: "ukiyo-wrapper",
+        externalRAF: false
+      });
+
+      // or HTMLCollection
+      const images = document.getElementsByClassName("ukiyo");
+      new simpleParallax(imag);
+    </script>
