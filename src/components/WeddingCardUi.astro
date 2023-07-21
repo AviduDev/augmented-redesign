@@ -20,7 +20,7 @@ import PrimaryButton from "./PrimaryButton.astro";
       <img class="weddingImage ukiyo" src={imgSrc} alt={imgAlt} />
     </div>
 
-    <p>{description}</p>
+    <p class="weddingDes">{description}</p>
     <PrimaryButton link={`/weddings/${slug}`} buttonText="full wedding" />
   </div>
 </div>
@@ -54,6 +54,7 @@ import PrimaryButton from "./PrimaryButton.astro";
     height: 100%;
     object-fit: cover;
     object-position: top;
+
   }
 
   .weddingTitle {
@@ -64,6 +65,10 @@ import PrimaryButton from "./PrimaryButton.astro";
     bottom: 0;
     left: 0;
     z-index: 5;
+  }
+
+  .weddingDes {
+    text-align: center;
   }
 </style>
 
