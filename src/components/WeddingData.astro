@@ -39,6 +39,7 @@ const weddings = await response.json();
 <div class="weddingContainer">
   {
     weddings.data.weddings.map((wedding) => (
+      <div class="item">
       <WeddingCardUi
         title={wedding.title}
         description={wedding.description}
@@ -46,6 +47,7 @@ const weddings = await response.json();
         imgAlt={wedding.title}
         slug={wedding.slug}
       />
+    </div>
     ))
   }
 </div>
@@ -82,3 +84,19 @@ const weddings = await response.json();
     }
   }
 </style>
+
+
+<script>
+  
+import { gsap } from 'gsap';
+
+  gsap.from(".item", {
+  scrollTrigger: ".item", // start the animation when ".box" enters the viewport (once)
+  yPercent: 20,
+  stagger: 1,
+  opacity: 0,
+  scale: 0.8,
+});
+
+
+</script>
