@@ -62,12 +62,7 @@ const service = Astro.props.service;
       <p>{service.description}</p>
     </section>
 
-    <section class="ctaSection">
-      <h3>Needs something else?</h3>
-      <div class="buttons">
-        <SecondaryButton link="/contact-us" buttonText="reach us" />
-      </div>
-    </section>
+ 
 
     <section class="serviceContainer">
       <div>
@@ -84,6 +79,15 @@ const service = Astro.props.service;
         </ul>
       </div>
     </section>
+
+    <section class="ctaSection">
+      <h3>Needs something else?</h3>
+      <div class="buttons">
+        <SecondaryButton link="/contact-us" buttonText="reach us" />
+      </div>
+    </section>
+
+    
   </main>
 </Layout>
 
@@ -99,6 +103,12 @@ const service = Astro.props.service;
   .topSection {
     display: flex;
     align-items: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .topSection {
+      padding-top: 15vh;
+    }
   }
 
   .serviceContainer {

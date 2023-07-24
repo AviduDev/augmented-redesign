@@ -12,6 +12,9 @@
 
       <li class="menuItem"><a href="/contact-us">Contact</a></li>
 
+
+      <div class="socialIcons">
+
       <li class="menuItem">
         <a
           href="https://www.facebook.com/people/Augmented-Arts-Weddings/100067963444970/"
@@ -44,6 +47,7 @@
         </a>
       </li>
 
+      
       <li class="menuItem">
         <a
           href="https://www.instagram.com/augmentedartsweddings/"
@@ -86,6 +90,10 @@
           </svg>
         </a>
       </li>
+
+
+    </div>
+
   </ul>
 </nav>
 
@@ -93,6 +101,7 @@
 
 .menuItem a {
   text-align: center;
+  padding: 0.5rem;
 }
 
   .top-nav {
@@ -112,7 +121,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       width: 100%;
       max-height: 0;
       transition: max-height 0.2s ease-out;
@@ -124,7 +133,7 @@
         padding: 0 10px;
         transition: 1s all;
         text-decoration: none;
-        font-size: 20px;
+        text-align: center;
 
         &:link,
         &:visited {
@@ -138,6 +147,15 @@
           color: #20232d;
         }
       }
+    }
+
+    .socialIcons {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .socialIcons li {
+      margin: 0 0.5rem 0 0.5rem;
     }
 
     .logo {
@@ -186,7 +204,7 @@
       display: none;
 
       &:checked ~ .menu {
-        max-height: 300px;
+        max-height: 600px;
       }
 
       &:checked ~ .menu-icon .navicon {
@@ -210,7 +228,7 @@
     }
   }
 
-
+  
   @media screen and (min-width: 1024px) {
     #top-nav {
       display: none;
