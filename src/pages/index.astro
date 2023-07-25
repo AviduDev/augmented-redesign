@@ -16,8 +16,8 @@ import Carousel from "../components/Carousel.astro";
 ---
 
 <Layout
-  title="Wedding Photography and Videography Studio based in Melbourne | Augmented Arts Weddings"
-  description="We are proffesionals in wedding photography and videography with over 7 years of experience."
+  title="Wedding Photography and Videography Studio in Melbourne | Augmented Arts Weddings"
+  description="As one of the top Melbourne wedding photography studios, Our experienced team is ready to capture your unforgettable moments for an affordable price with over 7 years of experience."
 >
   <main>
     <!-- hero -->
@@ -31,9 +31,9 @@ import Carousel from "../components/Carousel.astro";
 
     <section class="heroDes">
       <div class="titleWrapper">
-      <h1 id="heroTitle" class="heroTtl">
-        Melbourne's premium wedding photography & videography studio.
-      </h1>
+        <h1 id="heroTitle" class="heroTtl">
+          Melbourne's premium wedding photography & videography studio.
+        </h1>
       </div>
     </section>
 
@@ -95,10 +95,9 @@ import Carousel from "../components/Carousel.astro";
 </Layout>
 
 <style>
-
-h2 {
-  font-weight: normal;
-}
+  h2 {
+    font-weight: normal;
+  }
 
   /* .heroSection {
     background-color: rgba(0, 0, 0, 0.3);
@@ -112,7 +111,6 @@ h2 {
     padding: 0;
     position: relative;
     overflow: hidden;
-
   }
 
   .heroVideo {
@@ -149,8 +147,8 @@ h2 {
 
   @media screen and (max-width: 577px) {
     .heroTtl {
-    font-size: 4vw;
-  }
+      font-size: 4vw;
+    }
   }
 
   /* form styling */
@@ -210,11 +208,9 @@ h2 {
   }
 
   #heroTitle {
-  transform: translateY(100%);
+    transform: translateY(100%);
   }
-
 </style>
-
 
 <script>
   import SplitType from "split-type";
@@ -224,17 +220,12 @@ h2 {
 
   gsap.registerPlugin(ScrollTrigger);
 
-
   const title = new SplitType("#heroTitle", { types: "chars" });
   const chars = title.chars;
 
-  gsap.to(
-    chars,
-    {
-      scrollTrigger: "#heroTitle",
-      yPercent: -100,
-      stagger: 0.01,
-    }
-  )
-
+  gsap.to(chars, {
+    scrollTrigger: "#heroTitle",
+    yPercent: -100,
+    stagger: 0.01,
+  });
 </script>

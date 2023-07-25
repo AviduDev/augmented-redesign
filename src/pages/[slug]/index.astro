@@ -51,18 +51,20 @@ export async function getStaticPaths() {
 const service = Astro.props.service;
 ---
 
-<Layout title={service.title} description="">
+<Layout title={service.title} description={service.description}>
   <main>
     <section class="topSection">
       <h1>{service.title}</h1>
-      <img class="serviceImage ukiyo" src={service.mainImage.url} alt={service.title} />
+      <img
+        class="serviceImage ukiyo"
+        src={service.mainImage.url}
+        alt={service.title}
+      />
     </section>
 
     <section class="description">
       <p>{service.description}</p>
     </section>
-
- 
 
     <section class="serviceContainer">
       <div>
@@ -79,15 +81,6 @@ const service = Astro.props.service;
         </ul>
       </div>
     </section>
-
-    <section class="ctaSection">
-      <h3>Needs something else?</h3>
-      <div class="buttons">
-        <SecondaryButton link="/contact-us" buttonText="reach us" />
-      </div>
-    </section>
-
-    
   </main>
 </Layout>
 
@@ -105,11 +98,9 @@ const service = Astro.props.service;
     align-items: center;
   }
 
-
-    .topSection {
-      padding-top: 15vh;
-    }
-
+  .topSection {
+    padding-top: 15vh;
+  }
 
   .serviceContainer {
     max-width: 800px;
@@ -144,6 +135,4 @@ const service = Astro.props.service;
   p {
     margin: 0 auto;
   }
-
-
 </style>

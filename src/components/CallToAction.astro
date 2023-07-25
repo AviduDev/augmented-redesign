@@ -3,13 +3,21 @@ import PrimaryButton from "./PrimaryButton.astro";
 import SecondaryButton from "./SecondaryButton.astro";
 
 ---
-
-<div>
-    <h4>Download our price list(PDF)</h4>
-    <div class="ctaButtons">
-        <PrimaryButton link="#" buttonText="Download" />
-        <SecondaryButton link="" buttonText="" />
+<section class="ctaSection">
+    <h3>Need to know something else?</h3>
+    <div class="buttons">
+      <SecondaryButton link="/contact-us" buttonText="reach us" />
+      <a href="#">Download Pricelist</a>
     </div>
-</div>
+  </section>
 
-<style></style>
+<style>
+
+.ctaSection {
+    background-color: var(--black);
+    color: white;
+    text-align: center;
+    margin: 1rem;
+  }
+
+</style>
