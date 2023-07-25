@@ -86,20 +86,21 @@ const weddings = await response.json();
 </style>
 
 <script>
-  
-  import { gsap } from "gsap/dist/gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
   gsap.registerPlugin(ScrollTrigger);
 
   const items = document.querySelectorAll(".item");
 
   items.forEach(function (item) {
-    gsap.from( item, {
+    gsap.from(item, {
       scrollTrigger: item,
       yPercent: 20,
       // duration: 0.5,
       stagger: 0.5,
+      scale: 0.8,
+      opacity: 0,
     });
   });
 </script>
