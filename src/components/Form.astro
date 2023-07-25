@@ -23,8 +23,8 @@
     <textarea name="message" placeholder=""></textarea>
   </div>
 
-  <div class="radioItems formItem">
-    <fieldset >
+  <div id="radios" class="radioItems formItem">
+    <fieldset id="radios">
       <legend>How did you hear about us:</legend>
 
       <div>
@@ -33,8 +33,13 @@
       </div>
 
       <div>
-        <input type="radio" id="social" name="where" value="social" />
-        <label for="social">Social Media</label>
+        <input type="radio" id="Instagram" name="where" value="Instagram" />
+        <label for="social">Instagram</label>
+      </div>
+
+      <div>
+        <input type="radio" id="Facebook" name="where" value="Facebook" />
+        <label for="social">Facebook</label>
       </div>
 
       <div>
@@ -69,12 +74,17 @@
   }
 
   form input {
-    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(0, 0, 0);
   }
 
   input {
     border: none;
     width: 70%;
+  }
+
+  #radios {
+    display: flex;
+    flex-direction: row;
   }
 
   input::placeholder {
@@ -83,14 +93,14 @@
   }
 
   input {
-    background-color: #000000;
+    background-color: #ffffff;
   }
 
   textarea {
     border: none;
-    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(0, 0, 0);
     width: 70%;
-    background-color: #000000;
+    background-color: #ffffff;
   }
 
   button {
@@ -106,5 +116,13 @@
   .radioItems {
     margin-top: 0.5rem;
     padding: 0.5rem;
+  }
+
+  .radioItems {
+    margin: 0 auto;
+  }
+
+  button {
+    cursor: pointer;
   }
 </style>
