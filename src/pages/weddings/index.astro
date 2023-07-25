@@ -5,7 +5,7 @@ import Layout from "../../layouts/Layout.astro";
 import PrimaryButton from "../../components/PrimaryButton.astro";
 import WeddingCardUi from "../../components/WeddingCardUi.astro";
 
-const first = 10;
+let first = 10;
 
 // data fetching
 const response = await fetch(
@@ -49,16 +49,19 @@ const weddings = await response.json();
       <div class="weddingContainer">
         {
           weddings.data.weddings.map((wedding) => (
-            <WeddingCardUi
-              title={wedding.title}
-              description={wedding.description}
-              imgSrc={wedding.mainImage.url}
-              imgAlt={wedding.title}
-              slug={wedding.slug}
-            />
+            <div class="item">
+              <WeddingCardUi
+                title={wedding.title}
+                description={wedding.description}
+                imgSrc={wedding.mainImage.url}
+                imgAlt={wedding.title}
+                slug={wedding.slug}
+              />
+            </div>
           ))
         }
       </div>
+
     </section>
   </main>
 </Layout>
@@ -66,6 +69,10 @@ const weddings = await response.json();
 <!-- ---------------------------------------- -->
 
 <style>
+  #loadMore {
+    cursor: pointer;
+  }
+
   .weddingContainer {
     display: flex;
     flex-direction: column;
@@ -74,8 +81,8 @@ const weddings = await response.json();
   }
 
   .topSection {
-      padding-top: 15vh;
-    }
+    padding-top: 15vh;
+  }
 
   @media screen and (min-width: 1024px) {
     .weddingContainer {
@@ -99,3 +106,23 @@ const weddings = await response.json();
     }
   }
 </style>
+
+<script>
+  import { gsap } from "gsap/dist/gsap";
+  import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const items = document.querySelectorAll(".item");
+
+  // items.forEach(function (item) {
+  gsap.from(".item", {
+    scrollTrigger: ".item",
+    yPercent: 20,
+    // duration: 0.5,
+    stagger: 0.5,
+    opacity: 0,
+    scale: 0.8,
+  });
+  // });
+</script>
