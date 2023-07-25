@@ -60,21 +60,21 @@ const { title, description } = Astro.props;
       // -----
 
       // ukiyo
-      import Ukiyo from "ukiyojs";
+      // import Ukiyo from "ukiyojs";
       // CSS selector
-      new Ukiyo(".ukiyo");
+      // new Ukiyo(".ukiyo");
 
       // or node
-      const imag = document.querySelectorAll(".ukiyo");
-      new Ukiyo(imag, {
-        scale: 1.1, // 1~2 is recommended
-        speed: 1.5, // 1~2 is recommended
-        willChange: true, // This may not be valid in all cases
-        wrapperClass: "ukiyo-wrapper",
-        externalRAF: false
-      });
+      // const imag = document.querySelectorAll(".ukiyo");
+      // new Ukiyo(imag, {
+        // scale: 1.1, // 1~2 is recommended
+        // speed: 1.5, // 1~2 is recommended
+        // willChange: true, // This may not be valid in all cases
+      //   wrapperClass: "ukiyo-wrapper",
+      //   externalRAF: false
+      // });
 
       // or HTMLCollection
-      const images = document.getElementsByClassName("ukiyo");
-      new simpleParallax(imag);
+      // const images = document.getElementsByClassName("ukiyo");
+      // new simpleParallax(imag);
     </script>
