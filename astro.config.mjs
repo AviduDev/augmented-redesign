@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://augmentedartsweddings.com.au',
+  site: 'https://augmented-redesign.pages.dev',
   integrations: [sitemap()]
 });
