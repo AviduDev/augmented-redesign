@@ -40,14 +40,14 @@ const weddings = await response.json();
   {
     weddings.data.weddings.map((wedding) => (
       <div class="item">
-      <WeddingCardUi
-        title={wedding.title}
-        description={wedding.description}
-        imgSrc={wedding.mainImage.url}
-        imgAlt={wedding.title}
-        slug={wedding.slug}
-      />
-    </div>
+        <WeddingCardUi
+          title={wedding.title}
+          description={wedding.description}
+          imgSrc={wedding.mainImage.url}
+          imgAlt={wedding.title}
+          slug={wedding.slug}
+        />
+      </div>
     ))
   }
 </div>
@@ -85,18 +85,19 @@ const weddings = await response.json();
   }
 </style>
 
-
 <script>
-  
-import gsap from 'gsap';
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".item", {
-  scrollTrigger: ".item", // start the animation when ".box" enters the viewport (once)
-  yPercent: 20,
-  stagger: 1,
-  opacity: 0,
-  scale: 0.8,
-});
+  const items = document.querySelectorAll(".item");
 
-
+  items.forEach(function (item) {
+    gsap.from( item, {
+      scrollTrigger: item,
+      yPercent: 20,
+      // duration: 0.5,
+      stagger: 0.5,
+    });
+  });
 </script>
