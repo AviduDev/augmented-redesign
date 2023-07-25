@@ -30,9 +30,11 @@ import Carousel from "../components/Carousel.astro";
     </section>
 
     <section class="heroDes">
-      <h1 class="heroTtl">
+      <div class="titleWrapper">
+      <h1 id="heroTitle" class="heroTtl">
         Melbourne's premium wedding photography & videography studio.
       </h1>
+      </div>
     </section>
 
     <section class="carouselSection">
@@ -263,4 +265,38 @@ h2 {
     font-family: "Dancing Script", cursive;
     text-transform: capitalize;
   }
+
+  .titleWrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  #heroTitle {
+  transform: translateY(100%);
+  }
+
 </style>
+
+
+<script>
+  import SplitType from "split-type";
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+
+  const title = new SplitType("#heroTitle", { types: "chars" });
+  const chars = title.chars;
+
+  gsap.to(
+    chars,
+    {
+      scrollTrigger: "#heroTitle",
+      yPercent: -100,
+      stagger: 0.01,
+    }
+  )
+
+</script>
